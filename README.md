@@ -5,5 +5,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## APIs used:
 
-- [Alpha Vantage API](https://rapidapi.com/alphavantage/api/alpha-vantage/)
-- [Crypto News Live](https://rapidapi.com/ddeshon/api/crypto-news-live3/)
+- [Alpha Vantage API](https://rapidapi.com/alphavantage/api/alpha-vantage/) for the currency exchange rates.
+- [Crypto News Live](https://rapidapi.com/ddeshon/api/crypto-news-live3/) for the news articles.
