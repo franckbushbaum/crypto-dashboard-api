@@ -6,3 +6,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## APIs used:
 
 - [Alpha Vantage API](https://rapidapi.com/alphavantage/api/alpha-vantage/)
+- [Crypto News Live](https://rapidapi.com/ddeshon/api/crypto-news-live3/)
