@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ExchangeRate from "./ExchangeRate.js";
 import axios from 'axios';
+import Button from '@mui/material/Button';
 
 function CurrencyConverter() {
 
@@ -13,24 +14,44 @@ function CurrencyConverter() {
 
   const [secondaryCurrency, setSecondaryCurrency] = useState('BTC');
 
+  //Saving response to State:
+
+  const [rateOfExchange, setRateOfExchange] = useState(0)
+
+  const [result, setResult] = useState(0)
+
   const [amount, setAmount] = useState(1);
 
-  console.log('amount is', amount);
+  const [exchangedData, setExchangeData] = useState({
+    primaryCurrency: 'BTC',
+    secondaryCurrency: 'BTC',
+    rateOfExchange: 0
+  })
+
 
   const convert = () => {
 
     const options = {
       method: 'GET',
-      url: 'https://alpha-vantage.p.rapidapi.com/query',
+      url: 'http://localhost:5000/convert',
       params: { from_currency: primaryCurrency, function: 'CURRENCY_EXCHANGE_RATE', to_currency: secondaryCurrency },
-      headers: {
-        'x-rapidapi-host': 'alpha-vantage.p.rapidapi.com',
-        'x-rapidapi-key': 'bb38151e24msha271fe5e90f5b03p151d27jsnabf027f0721e'
-      }
     };
 
     axios.request(options).then((response) => {
       console.log(response.data);
+      //1 Old response, but seems important for future use..
+      // setResult(response.data['Realtime Currency Exchange Rate']['5. Exchange Rate'] * amount)
+      // setExchangeData({
+      //   primaryCurrency: primaryCurrency,
+      //   secondaryCurrency: secondaryCurrency,
+      //   rateOfExchange: response.data['Realtime Currency Exchange Rate']['5. Exchange Rate']
+      // })
+      setResult(response.data * amount)
+      setExchangeData({
+        primaryCurrency: primaryCurrency,
+        secondaryCurrency: secondaryCurrency,
+        rateOfExchange: response.data
+      })
     }).catch((error) => {
       console.error(error);
     });
@@ -69,7 +90,8 @@ function CurrencyConverter() {
                 <input
                   type="number"
                   name="currency-amount-2"
-                  value={""}
+                  value={result}                 
+                  disable="true"
                 />
               </td>
               <td>
@@ -85,9 +107,10 @@ function CurrencyConverter() {
             </tr>
           </tbody>
         </table>
-        <button id="convert-button" onClick={convert}>Convert</button>
+        <Button id="convert-button" variant="contained" size='small' onClick={convert}>Convert</Button>
       </div>
-      <ExchangeRate />
+      <ExchangeRate exchangedData={exchangedData}
+       />
     </div>
   );
 }
