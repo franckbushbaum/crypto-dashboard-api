@@ -13,27 +13,92 @@ code {
 }
 
 .app{
-  display: flex;
+  display: grid;
+  grid-template-columns: 35% 30% 35%;
   align-items: center; 
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 5%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
   
 }
 
 .news-feed{
+  margin-top: 100px;
   background-color: rgb(172, 196, 240);
   border-radius: 10px;
   padding: 15px;
-  margin-left: 15px;
+  margin-top: -300px;
+  margin-left: 65px;
   box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+  width: 442px;
 }
 
+.nav-menu-active{
+  background-color: #333738;
+  height: 100vh;  
+  left: 0;
+  -webkit-transition: width .7s ease-in-out;
+  -moz-transition: width .7s ease-in-out;
+  -o-transition: width .7s ease-in-out;
+  transition: width .7s ease-in-out;
+
+  width:85%;
+}
+
+.nav-menu{
+  background-color: #333738;
+  height: 100vh;
+  color: black;
+  justify-content: center;
+  top:0;
+  width: 0%;
+
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+
+  width:0%;
+}
+
+.nav-text > a{
+  height: 7vh;
+  margin-top: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+p {
+  margin-top: 40px;
+  margin-left: 15px;
+}
+
+.ham{
+  cursor: pointer;
+  color:white;
+  margin-left: 15px;
+  margin-top: 21px;
+}
+
+.navbar-toggle{
+  color: white;
+  z-index: 10;
+}
+
+.nav-text:hover{
+  background-color: rgb(17, 15, 19);;
+}
+
+
 .currency-converter{
+  margin-top: -400px;
   background-color: rgb(250, 242, 232);
   border-radius: 10px;
-  padding: 21px;
-  margin: 5px;
+  width: 380px;
+  height: 380px;
+  padding: 10px 30px 50px 30px;
   box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
   text-align: center;
 }
@@ -41,8 +106,9 @@ code {
 .exchange-rate {
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: rgb(207, 215, 230);
+  background-color: #B4B5BE;
   margin-top: 10px;
+  margin-bottom: 50px;
   border-radius: 5px;
   box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
 }
@@ -64,4 +130,19 @@ button:hover{
 
 .PtS{
   font-weight: 800;
+}
+
+.navbar {
+  background-color: #333738;
+  position: absolute;
+  top:0;
+  width: 80%;
+  height: 80px;
+}
+
+/* ----------Signup screen under 75rem---------- */
+
+@media screen and (max-width: 75.625rem) {
+
+
 }
