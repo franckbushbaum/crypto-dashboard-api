@@ -3,6 +3,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Front end:
+- React
+
+## Back End:
+- Express & Node.js 
+
 ## APIs used:
 
 - [Alpha Vantage API](https://rapidapi.com/alphavantage/api/alpha-vantage/) for the currency exchange rates.
