@@ -7,7 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React
 
 ## Back End:
-- Express & Node.js 
+- Node.js
+- Express
+- Axios
 
 ## APIs used:
 
