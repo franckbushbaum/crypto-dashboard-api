@@ -1,5 +1,5 @@
 # Cryptop Dashboard app using React/Node.js:
-*This project is simply to practice APIs, I won't dedicate much time to styling!*
+*This project is simply to practice APIs, ergo I won't dedicate much time to styling!*
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
